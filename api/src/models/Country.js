@@ -35,7 +35,7 @@ module.exports = (sequelize) => {
     population: {
       type: DataTypes.INTEGER,
     },
-    img: {
+    flags: {
       type: DataTypes.STRING,
     },
   });

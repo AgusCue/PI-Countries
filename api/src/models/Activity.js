@@ -2,39 +2,29 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define(
-    "activity",
-    {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+  sequelize.define("activity", {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-      dificultad: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-          min: 1,
-          max: 12,
-          isEven(value) {
-            if (value < 1 || value > 12) {
-              throw new Error("Solo valores entre 1 y 12!");
-            }
-          },
-        },
-      },
-
-      duracion: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      temporada: {
-        type: DataTypes.ENUM("Verano", "Otoño", "Invierno", "Primavera"),
-        allowNull: false,
+    difficulties: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1,
+        max: 5,
       },
     },
-    {
-      timestamps: false,
-    }
-  );
+
+    duration: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    season: {
+      type: DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring"),
+      allowNull: false,
+    },
+  });
 };
