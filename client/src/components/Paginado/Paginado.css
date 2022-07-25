@@ -1,0 +1,25 @@
+.paginas{
+    display: flex;
+    justify-content: center;
+    background-color: #7b694d;
+}
+
+.paginas ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.paginas li{
+    list-style: none;
+    margin:5px;
+}
+
+.paginas li button{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.paginas li button:focus{
+    background-color: red;
+}

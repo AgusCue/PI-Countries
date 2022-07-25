@@ -11,8 +11,8 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.use("/activitie", activitiesRouter);
-router.use("/activities", postRouter);
+router.use("/activities", activitiesRouter);
+router.use("/activity", postRouter);
 router.use("/countries", countryRouter);
 
 module.exports = router;

@@ -1,11 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const { Activity, Country } = require("../db");
-const {
-  getAllCountries,
-  getApiInfo,
-  getDbInfo,
-} = require("../Controllers/Country");
+const { getAllCountries } = require("../Controllers/Country");
 
 router.get("/", async (req, res) => {
   const { name } = req.query;
@@ -13,7 +9,7 @@ router.get("/", async (req, res) => {
   try {
     let allCountries = await Country.findAll({ include: { model: Activity } });
     if (!allCountries.length) {
-      allCountries = await getApiInfo();
+      allCountries = await getAllCountries();
       await Country.bulkCreate(allCountries);
     }
     if (id) {
@@ -40,6 +36,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const allCountries = await getAllCountries();
+  console.log(allCountries);
   const idCountry = allCountries.find((r) => r.id == id.toUpperCase());
   if (idCountry) {
     console.log(idCountry);

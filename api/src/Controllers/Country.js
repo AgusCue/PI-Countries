@@ -25,6 +25,8 @@ const getDbInfo = async () => {
   });
 };
 
+console.log(getDbInfo());
+
 const getAllCountries = async () => {
   const apiInfo = await getApiInfo();
   const dbInfo = await getDbInfo();

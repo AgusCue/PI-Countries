@@ -1,0 +1,107 @@
+.fondo{
+    background-image: url('../imagenes/Mapa\ mundi\ blancoynegro.png');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    color:white;
+    display: flex;  
+}
+
+.btn{
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 1600px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.americaSur{
+    display: flex;
+    margin-top: 467px;
+    margin-left: -1277px;  
+    opacity: 0;
+    width: 280px;
+    height: 400px;
+}
+
+.americaSur:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.americaNorte{
+    display: flex;
+    margin-top: -2px;
+    margin-left: -552px;
+    opacity: 0;
+    width: 700px;
+    height:480px;
+    cursor: pointer;
+}
+
+.americaNorte:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.africa{
+    display: flex;
+    margin-top: 322px;
+    margin-left: -63px;
+    opacity: 0;
+    width: 400px;
+    height: 450px;
+}
+
+.africa:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.asia{
+    display: flex;
+    margin-top: 82px;
+    margin-left: -88px;
+    opacity: 0;
+    width: auto;
+    height: min-content;
+}
+.asia img{
+
+    margin-left: -92px;
+}
+
+.asia:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.europa{
+    display: flex;
+    margin-top: 74px;
+    margin-left: -872px;
+    opacity: 0;
+    width: 400px;
+    height: 270px;
+}
+
+.europa:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.oceania{
+    display: flex;
+    margin-top: 549px;
+    margin-left: 270px;
+    opacity:0;
+    width: 300px;
+    height: 250px;
+}
+
+.oceania:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+

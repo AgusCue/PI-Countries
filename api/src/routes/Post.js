@@ -15,16 +15,13 @@ router.post("/", async (req, res) => {
       season,
     });
 
-    let activityDB = await Country.findAll({
-      where: { id: country },
+    country.forEach(async (e) => {
+      let activityDB = await Country.findAll({
+        where: { id: e },
+      });
+      await activityCreated.addCountry(activityDB);
     });
 
-    await activityCreated.addCountry(activityDB);
-
-    // for (let i = 0; i < country.length; i++) {
-    //   console.log(country[i].id);
-    //   await activityCreated.addCountry(country[i].id);
-    // }
     return res.send("se creo");
   } catch (error) {
     res.status(404).send({ error: "error" });

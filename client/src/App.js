@@ -1,10 +1,28 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home/Home.jsx";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
+import CreatedActivity from "./components/Created/Created";
+import Detail from "./components/Detail/Detail";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/home" component={Home}></Route>
+          <Route path="/activity">
+            <CreatedActivity />
+          </Route>
+          <Route path="/countries/:id">
+            <Detail />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
