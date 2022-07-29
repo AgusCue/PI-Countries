@@ -35,11 +35,13 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const allCountries = await getAllCountries();
-  console.log(allCountries);
-  const idCountry = allCountries.find((r) => r.id == id.toUpperCase());
+
+  const allCountries = await Country.findAll({ include: { model: Activity } });
+  // console.log(allCountries);
+  const idCountry = allCountries.find((r) => r.id === id.toUpperCase());
+  console.log(idCountry);
   if (idCountry) {
-    console.log(idCountry);
+    // console.log(idCountry);
     res.status(200).send(idCountry);
   } else {
     res.status("No existe ese Id pais");

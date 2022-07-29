@@ -16,9 +16,9 @@ const getApiInfo = async () => {
       population: e.population,
     };
   });
-
   return apiInfo;
 };
+
 const getDbInfo = async () => {
   return await Country.findAll({
     includes: Activity,

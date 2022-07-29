@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterCountry, orderByName } from "../../action";
+import { filterCountry, orderByName, orderByPopulation } from "../../action";
 
 import "./Filters.css";
 
@@ -13,11 +13,11 @@ export default function Filters({ setCurrentPage, setOrden }) {
     setOrden(`Ordenado ${e.target.value}`);
   }
 
-  function handleSortPoblation(e) {
-    e.preventDefault();
-    dispatch(orderByName(e.target.value));
+  function handleSortPoblation(m) {
+    m.preventDefault();
+    dispatch(orderByPopulation(m.target.value));
     setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
+    setOrden(`Ordenado ${m.target.value}`);
   }
 
   function handleClick(e) {
@@ -86,12 +86,12 @@ export default function Filters({ setCurrentPage, setOrden }) {
             </select>
           </div>
           <div className="select">
-            <select onChange={(e) => handleSortPoblation(e)}>
+            <select onChange={(m) => handleSortPoblation(m)}>
               <option selected disabled>
                 Order By Population
               </option>
-              <option value="max">MAX</option>
-              <option value="min">MIN</option>
+              <option value="asc">MAX</option>
+              <option value="des">MIN</option>
             </select>
           </div>
         </div>

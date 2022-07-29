@@ -1,0 +1,278 @@
+.crear{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  background-color: #88785f;
+  width: 100%;
+  height: 88vh;
+}
+
+.errors{
+  color: red;
+  font-size: 15px;
+  width: 300px;
+  margin-right: -150px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 15px solid black;
+    height: 115px;
+    background-color: #fbeee0;
+}
+
+.navbar h1{
+  position: absolute;
+  font-size: 70px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.casa{
+  width: max-content;
+  height: max-content;
+  margin-left: 1750px;  
+}
+
+.izquierda{
+ margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid black;
+  border-radius: 50px;
+  background-color:#c9beb3 ;
+}
+
+.name{
+  display: flex;
+  margin-left: -200px;
+  margin-top: 50px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.name input{
+  width: 700px;
+}
+
+
+.duration{
+  display: flex;
+  margin-left: -200px;
+  margin-top: 80px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.duration input{
+  width: 700px;
+}
+
+.difficulties{
+  display: flex;
+  margin-top: 50px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clasificacion{
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+
+
+.seasons{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.seasons h3{
+  font-size: 30px;
+}
+
+.temporada{
+  margin-left: 20px;
+  font-size: 25px;
+  display: flex;
+}
+
+.temporada2{
+  margin-left: 50px;
+}
+
+.input{
+  border: 2px solid black;
+  margin-top: 30px;
+  width: 200px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.input input{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+.paises{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#paisdiv {
+  align-items: center;
+  margin-top: 20px;
+  display:block;
+  overflow:auto;
+  margin-left: 50%;
+  border: 5px solid black;
+  border-radius: 30px;
+  width: 630px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color:#c9beb3 ;
+}
+
+.pais{
+  display: flex;
+  margin-top: 25px;
+  margin-left: 20px;
+  display: flex;
+  flex: 0 1 50px;
+  text-align: center;
+
+}
+
+.pais button{
+  height: 20px;
+  width: 20px;
+}
+
+.botoncrear{
+  margin-top: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+}
+
+/* ---------------select--------------------- */
+
+.category{
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  width: 800px;
+  justify-content: center;
+}
+
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background: #5c6664;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:#fff;
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+  display: none;
+}
+.categorycreate {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.categorycreate::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.categorycreate:hover::after {
+  color: white;
+}
+
+/* -------------dificulatdes ---------------*/
+
+.fas{
+    background-image: url('../imagenes/cruz.png');
+}
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: red;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: red;
+  }

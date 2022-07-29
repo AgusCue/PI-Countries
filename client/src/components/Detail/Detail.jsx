@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cleanDetail, getDetails } from "../../action";
+import { cleanDetail, getActivity, getDetails } from "../../action";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
@@ -20,17 +20,19 @@ import cap from "../imagenes/capital.png";
 
 import "./Detail.css";
 import gif from "../imagenes/back.png";
+import CardDetail from "../CardDetail/CardDetail";
 
 export default function Details() {
   const dispatch = useDispatch();
   const detailID = useSelector((state) => state.details);
-  console.log(detailID);
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getDetails(id));
+    dispatch(getActivity());
   }, [dispatch, id]);
 
+  console.log(detailID);
   return (
     <div className="todo">
       {!detailID.name ? (
@@ -128,9 +130,23 @@ export default function Details() {
                     <strong>{detailID.population} population</strong>{" "}
                   </span>
                 </div>
-                <div>
-                  <span>{detailID.activities}</span>
-                </div>
+              </div>
+              <div className="activity">
+                {detailID.activities
+                  ? detailID.activities.map((e) => {
+                      return (
+                        <CardDetail
+                          key={e.id}
+                          id={e.id}
+                          name={e.name}
+                          difficulties={e.difficulties}
+                          duration={e.duration}
+                          category={e.category}
+                          season={e.season}
+                        />
+                      );
+                    })
+                  : null}
               </div>
             </div>
           </div>

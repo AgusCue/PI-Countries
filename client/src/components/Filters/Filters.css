@@ -95,6 +95,8 @@
     cursor:pointer;
 } 
 
+/* ----------select---------------- */
+
 .selectores{
     display: flex;
     flex-direction: row;
@@ -146,5 +148,5 @@ select {
     transition:.25s all ease;
  }
  .select:hover::after {
-    color: #23b499;
+    color: white;
  }

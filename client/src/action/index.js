@@ -44,9 +44,9 @@ export function orderByName(payload) {
   };
 }
 
-export function orderByPoblation(payload) {
+export function orderByPopulation(payload) {
   return {
-    type: "ORDER_POBLATION",
+    type: "ORDER_POPULATION",
     payload,
   };
 }

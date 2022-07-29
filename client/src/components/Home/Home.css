@@ -11,7 +11,7 @@
 
 .cards{
    display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background-color: #7b694d;
   height: 1100px;
 }

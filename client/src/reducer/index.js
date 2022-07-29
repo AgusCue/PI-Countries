@@ -56,9 +56,9 @@ function rootReducer(state = initialState, action) {
         countries: sortedName,
       };
 
-    case "ORDER_POBLATION":
+    case "ORDER_POPULATION":
       let sortedPoblation =
-        action.payload === "max"
+        action.payload === "des"
           ? state.countries.sort(function (a, b) {
               if (a.population > b.population) {
                 return 1;
@@ -91,6 +91,7 @@ function rootReducer(state = initialState, action) {
     case "POST_ACTIVITY":
       return {
         ...state,
+        activities: [...state.activities, action.payload],
       };
 
     case "GET_DETAILS":

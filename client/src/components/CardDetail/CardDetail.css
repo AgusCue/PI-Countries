@@ -1,0 +1,42 @@
+.categoria img{
+    width: 50px;
+    height: 50px;
+}
+
+.actividades{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 700px;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #bdb4a6;
+}
+
+.actividades h2{
+    width: 130px;
+}
+
+.number{
+    display: flex;
+    flex-direction: column;
+}
+
+.dificultad{
+    display: flex;
+    flex-direction: row;
+}
+
+.duracion{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.season{
+    display: flex;
+    flex-direction: row;
+}

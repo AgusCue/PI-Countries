@@ -3,15 +3,16 @@ const router = Router();
 const { Country, Activity } = require("../db");
 
 router.post("/", async (req, res) => {
-  const { name, difficulties, duration, season, country } = req.body;
-  if (!name || !difficulties || !duration || !season || !country) {
+  const { name, difficulties, duration, season, category, country } = req.body;
+  if (!name || !difficulties || !duration || !season || !category || !country) {
     return res.status(404).send("falta campo");
   }
   try {
     let activityCreated = await Activity.create({
-      name,
+      name: name.slice(0, 1).toUpperCase() + name.slice(1, name.length),
       difficulties,
       duration,
+      category,
       season,
     });
 

@@ -34,8 +34,6 @@ export default function SearchBar({ setCurrentPage }) {
         <img src={lupa} alt="lupa" width="60px" height="60px" />
         <i class="fas fa-search"></i>
       </a>
-      {/* <button type="submit" onClick={(e) => handleSubmit(e)}>
-      </button> */}
     </div>
   );
 }
