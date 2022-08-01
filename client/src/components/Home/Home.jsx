@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cleanDetail, getActivity, getCountries } from "../../action";
+import { getActivity, getCountries } from "../../action";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import Paginado from "../Paginado/Paginado";
@@ -15,7 +15,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
   const [orden, setOrden] = useState("");
-  console.log(allCountries);
+  // console.log(allCountries);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [countryPerPage] = useState(10);
@@ -23,8 +23,9 @@ export default function Home() {
   const indexOfFirstCountry = indexOfLastCountry - countryPerPage;
   const currentCountry = allCountries.slice(
     indexOfFirstCountry,
-    indexOfLastCountry
+    currentPage === 1 ? 9 : indexOfLastCountry
   );
+  // console.log(indexOfFirstCountry, indexOfLastCountry);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);

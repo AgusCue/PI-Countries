@@ -58,6 +58,13 @@ export function filterCountry(payload) {
   };
 }
 
+export function filterActivity(payload) {
+  return {
+    type: "FILTER_ACTIVITY",
+    payload,
+  };
+}
+
 export function postActivity(payload) {
   return async function (dispatch) {
     let json = await axios.post("http://localhost:3001/activity", payload);
@@ -77,12 +84,5 @@ export function getDetails(id) {
     } catch (error) {
       console.log(error);
     }
-  };
-}
-
-export function cleanDetail() {
-  return {
-    type: "CLEAN_DETAIL",
-    payload: {},
   };
 }

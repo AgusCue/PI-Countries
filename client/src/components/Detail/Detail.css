@@ -15,9 +15,9 @@ span{
 .data{
     background-color: #fbeee0;
     border-top: 15px solid black;
-    height:86vh;
-}
+    height: 86.5vh;
 
+}
 h5{
     display: flex;
     justify-content: center;
@@ -91,4 +91,10 @@ h5{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.noactividad{
+    margin-top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }

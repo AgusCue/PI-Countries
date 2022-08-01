@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cleanDetail, getActivity, getDetails } from "../../action";
+import { getActivity, getDetails } from "../../action";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
@@ -132,21 +132,23 @@ export default function Details() {
                 </div>
               </div>
               <div className="activity">
-                {detailID.activities
-                  ? detailID.activities.map((e) => {
-                      return (
-                        <CardDetail
-                          key={e.id}
-                          id={e.id}
-                          name={e.name}
-                          difficulties={e.difficulties}
-                          duration={e.duration}
-                          category={e.category}
-                          season={e.season}
-                        />
-                      );
-                    })
-                  : null}
+                {detailID.activities.length > 0 ? (
+                  detailID.activities.map((e) => {
+                    return (
+                      <CardDetail
+                        key={e.id}
+                        id={e.id}
+                        name={e.name}
+                        difficulties={e.difficulties}
+                        duration={e.duration}
+                        category={e.category}
+                        season={e.season}
+                      />
+                    );
+                  })
+                ) : (
+                  <p className="noactividad">🤷‍♂️ Not have activities</p>
+                )}
               </div>
             </div>
           </div>

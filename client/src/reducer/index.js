@@ -30,6 +30,20 @@ function rootReducer(state = initialState, action) {
         countries: filterCountry,
       };
 
+    case "FILTER_ACTIVITY":
+      const filterACt =
+        action.payload === "all"
+          ? state.allCountries
+          : state.allCountries.filter((e) => {
+              const actividad = e.activities.map((m) => m.name);
+              return actividad.includes(action.payload);
+            });
+      console.log(filterACt);
+      return {
+        ...state,
+        countries: filterACt,
+      };
+
     case "ORDER_NAME":
       let sortedName =
         action.payload === "asc"
@@ -98,12 +112,6 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         details: action.payload,
-      };
-
-    case "CLEAN_DETAIL":
-      return {
-        state,
-        details: {},
       };
 
     default:

@@ -1,11 +1,17 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { filterCountry, orderByName, orderByPopulation } from "../../action";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  filterActivity,
+  filterCountry,
+  orderByName,
+  orderByPopulation,
+} from "../../action";
 
 import "./Filters.css";
 
 export default function Filters({ setCurrentPage, setOrden }) {
   const dispatch = useDispatch();
+  const actividades = useSelector((state) => state.activities);
   function handleSort(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
@@ -27,6 +33,13 @@ export default function Filters({ setCurrentPage, setOrden }) {
     setOrden(`Ordenado ${e.target.value}`);
   }
 
+  function handleActividades(e) {
+    e.preventDefault();
+    dispatch(filterActivity(e.target.value));
+    setCurrentPage(1);
+    setOrden(`Ordenado ${e.target.value}`);
+  }
+
   return (
     <div className="filters">
       <div className="continentes">
@@ -38,7 +51,7 @@ export default function Filters({ setCurrentPage, setOrden }) {
           ></button>
 
           <button
-            className="hola"
+            className="africac"
             value="Africa"
             onClick={(e) => handleClick(e)}
           ></button>
@@ -59,13 +72,13 @@ export default function Filters({ setCurrentPage, setOrden }) {
             onClick={(e) => handleClick(e)}
           ></button>
           <button
-            className="boton"
+            className="Asiaa"
             value="Asia"
             onClick={(e) => handleClick(e)}
           ></button>
 
           <button
-            className="boton2"
+            className="oceaniaa"
             value="Oceania"
             onClick={(e) => handleClick(e)}
           ></button>
@@ -92,6 +105,14 @@ export default function Filters({ setCurrentPage, setOrden }) {
               </option>
               <option value="asc">MAX</option>
               <option value="des">MIN</option>
+            </select>
+          </div>
+          <div className="select">
+            <select onChange={handleActividades}>
+              <option value="all">All</option>
+              {actividades.map((e) => {
+                return <option value={e.name}>{e.name}</option>;
+              })}
             </select>
           </div>
         </div>

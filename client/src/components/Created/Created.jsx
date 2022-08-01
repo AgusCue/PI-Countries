@@ -13,20 +13,15 @@ function validate(input) {
 
   if (!input.name) {
     errors.name = "Requires a name";
-  }
-  if (!validateName.test(input.name)) {
+  } else if (!validateName.test(input.name)) {
     errors.name = "Not accept numbers";
-  }
-  if (!input.duration) {
+  } else if (!input.duration) {
     errors.duration = "Requires a duration";
-  }
-  if (!input.difficulties) {
+  } else if (!input.difficulties) {
     errors.difficulties = "Select difficulties";
-  }
-  if (!input.category) {
+  } else if (!input.category) {
     errors.category = "Select category";
-  }
-  if (!input.season) {
+  } else if (!input.season) {
     errors.season = "Select season";
   }
   return errors;
@@ -76,6 +71,7 @@ export default function CreatedActivity() {
       history.push("/home");
     }
   }
+
   function handleChange(e) {
     setErrors(
       validate({
@@ -120,9 +116,9 @@ export default function CreatedActivity() {
   }
 
   function handleSelect(e) {
-    const contry = input.country.find((c) => c.id === e.target.value);
-    console.log(contry);
-    if (!contry) {
+    if (input.country.includes(e.target.value)) {
+      alert("ya existe");
+    } else {
       setInput({
         ...input,
         country: [...input.country, e.target.value],
@@ -133,9 +129,10 @@ export default function CreatedActivity() {
   }
   // console.log(pais);
   function handleDelete(e) {
+    console.log(e);
     setInput({
       ...input,
-      country: input.country.filter((c) => c !== e),
+      country: input.country.filter((c) => c.id !== e.id),
     });
     let deleteID = pais.filter((country) => country !== e);
     setPais(deleteID);
@@ -314,7 +311,7 @@ export default function CreatedActivity() {
           <div id="paisdiv">
             {pais.map((e) => {
               return (
-                <div key={e.id} className="pais">
+                <div key={e} className="pais">
                   <img src={e[0].flags} alt="alt" width="80px" height="50px" />
                   <button
                     onClick={() => {

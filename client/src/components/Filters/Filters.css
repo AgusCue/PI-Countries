@@ -23,7 +23,12 @@
    
 }
 
-.hola{
+.world:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
+
+.africac{
     background-image: url('../imagenes/iconAfrica.png');
     background-size: cover;
     background-color: transparent;
@@ -31,6 +36,10 @@
     width: 150px;
     height: 150px;
     cursor:pointer  
+}
+.africac:focus{
+    background-color:  white;
+    border-radius: 50%;
 }
 
  .europe{
@@ -43,6 +52,11 @@
     cursor:pointer
 }
 
+
+.europe:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
 .norte{
     background-image: url('../imagenes/iconNorte.png');
     background-size: cover;
@@ -54,8 +68,12 @@
     margin-top: 10px;
     
 }
+.norte:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
 
-.boton{
+.Asiaa{
     background-image: url('../imagenes/iconAsia.png');
     background-size: cover;
     background-color: transparent;
@@ -64,8 +82,13 @@
     height: 150px;
     cursor:pointer 
 }
+.Asiaa:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
 
-.boton2{
+
+.oceaniaa{
     background-image: url('../imagenes/iconOceania.png');
     background-size: cover;
     background-color: transparent;
@@ -73,6 +96,10 @@
     width: 150px;
     height: 150px;
     cursor:pointer 
+}
+.oceaniaa:focus{
+    background-color:  white;
+    border-radius: 50%;
 }
 
 .sur{
@@ -84,6 +111,10 @@
     height: 150px;
     cursor:pointer 
 }
+.sur:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
 
 .antartida{
     background-image: url('../imagenes/iconAntartida.png');
@@ -94,6 +125,10 @@
     height: 150px;
     cursor:pointer;
 } 
+.antartida:focus{
+    background-color:  white;
+    border-radius: 50%;
+}
 
 /* ----------select---------------- */
 
@@ -101,7 +136,7 @@
     display: flex;
     flex-direction: row;
     margin-top: -32px;
-    margin-left: -400px;
+    margin-left: -200px;
 }
 
 select {
@@ -134,7 +169,7 @@ select {
     overflow: hidden;
     border-radius: .25em;
     margin-top: 30px;
-    margin-left: 400px;
+    margin-left: 100px;
  }
  .select::after {
     content: '\25BC';

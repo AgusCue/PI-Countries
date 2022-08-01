@@ -9,11 +9,12 @@
 }
 
 
+
 .cards{
-   display: grid;
+  display: grid;
   grid-template-columns: repeat(5, 1fr);
   background-color: #7b694d;
-  height: 1100px;
+  height: 708px;
 }
 
 .create {

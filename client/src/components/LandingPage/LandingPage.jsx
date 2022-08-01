@@ -19,14 +19,7 @@ export default function LandingPage() {
       </Link>
       <div className="americaSur">
         <Link to={"/home"}>
-          <button value="South America">
-            <img
-              src={americaSur}
-              alt="AmericaSur"
-              width="auto"
-              height="430px"
-            />
-          </button>
+          <img src={americaSur} alt="AmericaSur" width="auto" height="430px" />
         </Link>
       </div>
       <div className="americaNorte">
