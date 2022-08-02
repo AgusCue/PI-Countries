@@ -15,15 +15,17 @@ export default function Home() {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
   const [orden, setOrden] = useState("");
-  // console.log(allCountries);
+  console.log(allCountries);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [countryPerPage] = useState(10);
-  const indexOfLastCountry = currentPage * countryPerPage;
-  const indexOfFirstCountry = indexOfLastCountry - countryPerPage;
+  const indexOfLastCountry =
+    currentPage * (currentPage === 1 ? countryPerPage - 1 : countryPerPage);
+  const indexOfFirstCountry =
+    indexOfLastCountry - (currentPage === 1 ? 9 : countryPerPage);
   const currentCountry = allCountries.slice(
     indexOfFirstCountry,
-    currentPage === 1 ? 9 : indexOfLastCountry
+    indexOfLastCountry
   );
   // console.log(indexOfFirstCountry, indexOfLastCountry);
 

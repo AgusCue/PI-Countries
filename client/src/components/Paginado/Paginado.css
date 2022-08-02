@@ -21,5 +21,6 @@
 }
 
 .paginas li button:focus{
-    background-color: red;
+    background-color: #808e9b;
+    border: none;
 }

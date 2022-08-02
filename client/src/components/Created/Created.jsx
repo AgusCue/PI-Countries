@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, postActivity } from "../../action";
+import { getActivity, getCountries, postActivity } from "../../action";
 
 import home from "../imagenes/home.png";
 
@@ -47,8 +47,8 @@ export default function CreatedActivity() {
   function handleSubmit(e) {
     e.preventDefault();
     distpach(postActivity(input));
-    if (!pais.length > 0) return alert("Select a country");
     if (!input.name) return alert("Complete the space");
+    if (!pais.length > 0) return alert("Select a country");
     if (
       errors.name ||
       errors.duration ||
@@ -72,6 +72,8 @@ export default function CreatedActivity() {
     }
   }
 
+  //---------------Input-----------//
+
   function handleChange(e) {
     setErrors(
       validate({
@@ -85,8 +87,17 @@ export default function CreatedActivity() {
     });
   }
 
+  //-------------Season----------//
+
   function handleCheckBox(e) {
-    if (e.target.checked) {
+    if (input.season.includes(e.target.value)) {
+      let filtro = input.season.filter((m) => m !== e.target.value);
+      // console.log(filtro);
+      setInput({
+        ...input,
+        season: filtro,
+      });
+    } else {
       setErrors(
         validate({
           ...input,
@@ -97,10 +108,10 @@ export default function CreatedActivity() {
         ...input,
         season: [...input.season, e.target.value],
       });
-    } else {
-      console.log("error");
     }
   }
+
+  //-----------------category-----------//
 
   function handleSelect2(e) {
     setErrors(
@@ -114,6 +125,8 @@ export default function CreatedActivity() {
       category: e.target.value,
     });
   }
+
+  //-------------------country-----------------//
 
   function handleSelect(e) {
     if (input.country.includes(e.target.value)) {
@@ -130,16 +143,21 @@ export default function CreatedActivity() {
   // console.log(pais);
   function handleDelete(e) {
     console.log(e);
-    setInput({
-      ...input,
-      country: input.country.filter((c) => c.id !== e.id),
-    });
-    let deleteID = pais.filter((country) => country !== e);
-    setPais(deleteID);
+    let borrado = input.country.filter((c) => c !== e[0].id);
+    // console.log(borrado);
+    if (borrado) {
+      setInput({
+        ...input,
+        country: borrado,
+      });
+      let deleteID = pais.filter((country) => country !== e);
+      setPais(deleteID);
+    }
   }
 
   useEffect(() => {
     distpach(getCountries());
+    distpach(getActivity());
   }, [distpach]);
 
   return (
@@ -159,6 +177,7 @@ export default function CreatedActivity() {
               type="text"
               value={input.name}
               name="name"
+              autoComplete="off"
             />
             <p className="errors">{errors.name}</p>
           </div>
@@ -169,6 +188,7 @@ export default function CreatedActivity() {
               value={input.duration}
               name="duration"
               onChange={handleChange}
+              autoComplete="off"
             />
             <p className="errors">{errors.duration}</p>
           </div>
@@ -313,13 +333,14 @@ export default function CreatedActivity() {
               return (
                 <div key={e} className="pais">
                   <img src={e[0].flags} alt="alt" width="80px" height="50px" />
-                  <button
+                  <p
+                    className="borrado"
                     onClick={() => {
                       handleDelete(e);
                     }}
                   >
                     X
-                  </button>
+                  </p>
                 </div>
               );
             })}

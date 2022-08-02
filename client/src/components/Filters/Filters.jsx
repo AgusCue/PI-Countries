@@ -108,7 +108,7 @@ export default function Filters({ setCurrentPage, setOrden }) {
             </select>
           </div>
           <div className="select">
-            <select onChange={handleActividades}>
+            <select onChange={(e) => handleActividades(e)}>
               <option value="all">All</option>
               {actividades.map((e) => {
                 return <option value={e.name}>{e.name}</option>;

@@ -18,39 +18,27 @@ export default function LandingPage() {
         <img src={gif} alt="img" width="100px" height="100px" />
       </Link>
       <div className="americaSur">
-        <Link to={"/home"}>
-          <img src={americaSur} alt="AmericaSur" width="auto" height="430px" />
-        </Link>
+        <img src={americaSur} alt="AmericaSur" width="auto" height="430px" />
       </div>
       <div className="americaNorte">
-        <Link>
-          <img
-            src={americaNorte}
-            alt="AmericaNorte"
-            width="723px"
-            height="520px"
-          />
-        </Link>
+        <img
+          src={americaNorte}
+          alt="AmericaNorte"
+          width="723px"
+          height="520px"
+        />
       </div>
       <div className="africa">
-        <Link>
-          <img src={africa} alt="Africa" width="400px" height="445px" />
-        </Link>
+        <img src={africa} alt="Africa" width="400px" height="445px" />
       </div>
       <div className="asia">
-        <Link>
-          <img src={asia} alt="Asia" width="652px" height="532px" />
-        </Link>
+        <img src={asia} alt="Asia" width="652px" height="532px" />
       </div>
       <div className="europa">
-        <Link>
-          <img src={europa} alt="Europa" width="387px" height="269px" />
-        </Link>
+        <img src={europa} alt="Europa" width="387px" height="269px" />
       </div>
       <div className="oceania">
-        <Link>
-          <img src={oceania} alt="oceania" width="235px" height="275px" />
-        </Link>
+        <img src={oceania} alt="oceania" width="235px" height="275px" />
       </div>
     </div>
   );
