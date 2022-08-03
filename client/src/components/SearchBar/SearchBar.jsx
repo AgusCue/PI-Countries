@@ -17,6 +17,7 @@ export default function SearchBar({ setCurrentPage }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!name) return alert("Search a country");
     dispatch(getName(name.toLowerCase()));
     setCurrentPage(1);
   }

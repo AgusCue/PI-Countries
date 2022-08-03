@@ -31,6 +31,7 @@ export function getName(name) {
         payload: json.data,
       });
     } catch (error) {
+      alert("Search for a country");
       console.log(error);
     }
   };
