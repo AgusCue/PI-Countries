@@ -17,7 +17,6 @@ export default function SearchBar({ setCurrentPage }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!name) return alert("Search a country");
     dispatch(getName(name.toLowerCase()));
     setCurrentPage(1);
   }
@@ -30,9 +29,9 @@ export default function SearchBar({ setCurrentPage }) {
         placeholder="Search here..."
         onChange={(e) => handleInput(e)}
       />
-      <a class="search-btn" href="#" onClick={(e) => handleSubmit(e)}>
+      <a className="search-btn" href="#" onClick={(e) => handleSubmit(e)}>
         <img src={lupa} alt="lupa" width="60px" height="60px" />
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
       </a>
     </div>
   );

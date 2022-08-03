@@ -31,7 +31,6 @@ export function getName(name) {
         payload: json.data,
       });
     } catch (error) {
-      alert("Not exist this Country");
       console.log(error);
     }
   };

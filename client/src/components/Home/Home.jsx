@@ -15,8 +15,6 @@ export default function Home() {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
   const [orden, setOrden] = useState("");
-  console.log(allCountries);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [countryPerPage] = useState(10);
   const indexOfLastCountry =
@@ -27,6 +25,7 @@ export default function Home() {
     indexOfFirstCountry,
     indexOfLastCountry
   );
+  // console.log(allCountries);
   // console.log(indexOfFirstCountry, indexOfLastCountry);
 
   const paginado = (pageNumber) => {

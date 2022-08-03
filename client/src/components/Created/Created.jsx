@@ -129,20 +129,16 @@ export default function CreatedActivity() {
   //-------------------country-----------------//
 
   function handleSelect(e) {
-    if (input.country.includes(e.target.value)) {
-      alert("ya existe");
-    } else {
-      setInput({
-        ...input,
-        country: [...input.country, e.target.value],
-      });
-      const found = allCountries.find((el) => el.id === e.target.value);
-      setPais([...pais, [found]]);
-    }
+    setInput({
+      ...input,
+      country: [...input.country, e.target.value],
+    });
+    const found = allCountries.find((el) => el.id === e.target.value);
+    setPais([...pais, [found]]);
   }
   // console.log(pais);
   function handleDelete(e) {
-    console.log(e);
+    // console.log(e);
     let borrado = input.country.filter((c) => c !== e[0].id);
     // console.log(borrado);
     if (borrado) {
