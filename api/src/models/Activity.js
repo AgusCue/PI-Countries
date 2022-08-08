@@ -24,16 +24,16 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
-      category: {
-        type: DataTypes.ENUM(
-          "sports",
-          "sightseeing",
-          "foods",
-          "dances",
-          "other"
-        ),
-        allowNull: false,
-      },
+      // // category: {
+      // //   type: DataTypes.ENUM(
+      // //     "sports",
+      // //     "sightseeing",
+      // //     "foods",
+      // //     "dances",
+      // //     "other"
+      // //   ),
+      // //   allowNull: false,
+      // },
 
       season: {
         type: DataTypes.ARRAY(
