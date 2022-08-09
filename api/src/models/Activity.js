@@ -13,10 +13,6 @@ module.exports = (sequelize) => {
       difficulties: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-          min: 1,
-          max: 5,
-        },
       },
 
       duration: {
@@ -24,16 +20,6 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
-      category: {
-        type: DataTypes.ENUM(
-          "sports",
-          "sightseeing",
-          "foods",
-          "dances",
-          "other"
-        ),
-        allowNull: false,
-      },
       season: {
         type: DataTypes.ARRAY(
           DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring")
