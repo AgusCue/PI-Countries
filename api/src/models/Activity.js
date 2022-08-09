@@ -1,6 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
+  // defino el modelo
   sequelize.define(
     "activity",
     {
@@ -8,16 +9,36 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      difficulty: {
-        type: DataTypes.ENUM("1", "2", "3", "4", "5"),
+
+      difficulties: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        validate: {
+          min: 1,
+          max: 5,
+        },
       },
+
       duration: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
         allowNull: false,
       },
+
+      category: {
+        type: DataTypes.ENUM(
+          "sports",
+          "sightseeing",
+          "foods",
+          "dances",
+          "other"
+        ),
+        allowNull: false,
+      },
+
       season: {
-        type: DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring"),
+        type: DataTypes.ARRAY(
+          DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring")
+        ),
         allowNull: false,
       },
     },
