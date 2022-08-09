@@ -30,5 +30,7 @@ const { conn } = require("./src/db.js");
 const { PORT } = process.env;
 
 conn.sync({ force: false }).then(() => {
-  server.listen(PORT, () => console.log(`Listen on port ${PORT}`));
+  server.listen(PORT, () => {
+    console.log(`Listen on port ${PORT}`); // eslint-disable-line no-console
+  });
 });
