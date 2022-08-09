@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const { Activity, Country } = require("../db");
-const { getAllCountries } = require("../Controllers");
+const { getAllCountries } = require("../controllers");
 
 router.get("/", async (req, res) => {
   const { name } = req.query;
