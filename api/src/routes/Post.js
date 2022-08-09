@@ -3,8 +3,8 @@ const router = Router();
 const { Country, Activity } = require("../db");
 
 router.post("/", async (req, res) => {
-  const { name, difficulties, duration, season, category, country } = req.body;
-  if (!name || !difficulties || !duration || !season || !category || !country) {
+  const { name, difficulties, duration, season, country } = req.body;
+  if (!name || !difficulties || !duration || !season || !country) {
     return res.status(404).send("falta campo");
   }
   try {
@@ -12,7 +12,6 @@ router.post("/", async (req, res) => {
       name: name.slice(0, 1).toUpperCase() + name.slice(1, name.length),
       difficulties,
       duration,
-      category,
       season,
     });
 
