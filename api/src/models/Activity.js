@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "activities",
+    "activity",
     {
       name: {
         type: DataTypes.STRING,
@@ -13,11 +13,28 @@ module.exports = (sequelize) => {
       difficulties: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        validate: {
+          min: 1,
+          max: 5,
+        },
       },
+
       duration: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
+      category: {
+        type: DataTypes.ENUM(
+          "sports",
+          "sightseeing",
+          "foods",
+          "dances",
+          "other"
+        ),
+        allowNull: false,
+      },
+
       season: {
         type: DataTypes.ARRAY(
           DataTypes.ENUM("Summer", "Autumn", "Winter", "Spring")
