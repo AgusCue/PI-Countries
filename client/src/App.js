@@ -17,7 +17,7 @@ function App() {
           <Route path="/activity">
             <CreatedActivity />
           </Route>
-          <Route path="/countries/:id">
+          <Route path="/country/:id">
             <Detail />
           </Route>
         </Switch>
