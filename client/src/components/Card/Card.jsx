@@ -11,7 +11,7 @@ export default function Card({ name, flags, continents, id }) {
         <div className="card__content">
           <h2>{name}</h2>
           <p>{continents}</p>
-          <Link to={`/countries/${id}`}>
+          <Link to={`/country/${id}`}>
             <a href="#">Read More</a>
           </Link>
         </div>
