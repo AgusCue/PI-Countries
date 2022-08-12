@@ -144,7 +144,7 @@ export default function Details() {
                         name={e.name}
                         difficulties={e.difficulties}
                         duration={e.duration}
-                        category={e.category}
+                        // category={e.category}
                         season={e.season}
                       />
                     );
