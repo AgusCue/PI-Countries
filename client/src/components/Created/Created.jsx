@@ -58,7 +58,7 @@ export default function CreatedActivity() {
     ) {
       alert("Missing fill spaces");
     } else {
-      alert("se creo");
+      alert("Is created");
       setInput({
         name: "",
         difficulty: "",

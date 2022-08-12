@@ -17,10 +17,8 @@ export default function Home() {
   const [orden, setOrden] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [countryPerPage] = useState(10);
-  const indexOfLastCountry =
-    currentPage * (currentPage === 1 ? countryPerPage - 1 : countryPerPage);
-  const indexOfFirstCountry =
-    indexOfLastCountry - (currentPage === 1 ? 9 : countryPerPage);
+  const indexOfLastCountry = currentPage * countryPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countryPerPage;
   const currentCountry = allCountries.slice(
     indexOfFirstCountry,
     indexOfLastCountry
