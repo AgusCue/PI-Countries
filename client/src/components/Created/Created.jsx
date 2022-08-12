@@ -19,8 +19,8 @@ function validate(input) {
     errors.duration = "Requires a duration";
   } else if (!input.difficulties) {
     errors.difficulties = "Select difficulties";
-    // } else if (!input.category) {
-    //   errors.category = "Select category";
+  } else if (!input.category) {
+    errors.category = "Select category";
   } else if (!input.season) {
     errors.season = "Select season";
   }
@@ -53,7 +53,7 @@ export default function CreatedActivity() {
       errors.name ||
       errors.duration ||
       errors.difficulties ||
-      // errors.category ||
+      errors.category ||
       errors.season
     ) {
       alert("Missing fill spaces");
@@ -113,18 +113,18 @@ export default function CreatedActivity() {
 
   //-----------------category-----------//
 
-  // function handleSelect2(e) {
-  //   setErrors(
-  //     validate({
-  //       ...input,
-  //       category: e.target.value,
-  //     })
-  //   );
-  //   setInput({
-  //     ...input,
-  //     category: e.target.value,
-  //   });
-  // }
+  function handleSelect2(e) {
+    setErrors(
+      validate({
+        ...input,
+        category: e.target.value,
+      })
+    );
+    setInput({
+      ...input,
+      category: e.target.value,
+    });
+  }
 
   //-------------------country-----------------//
 
@@ -251,7 +251,7 @@ export default function CreatedActivity() {
               <p className="errors">{errors.difficulties}</p>
             </div>
           </form>
-          {/* <div className="category">
+          <div className="category">
             <div className="categorycreate">
               <select onChange={(e) => handleSelect2(e)}>
                 <option selected disabled>
@@ -265,7 +265,7 @@ export default function CreatedActivity() {
               </select>
             </div>
             <p className="errors">{errors.category}</p>
-          </div> */}
+          </div>
           <div className="seasons">
             <h3>Season</h3>
             <div className="temporada">

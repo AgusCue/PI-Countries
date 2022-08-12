@@ -1,10 +1,10 @@
 import React from "react";
 
-// import sports from "../imagenes/deportes.png";
-// import foods from "../imagenes/comer.png";
-// import sightseeing from "../imagenes/pasear.png";
-// import dances from "../imagenes/danza.png";
-// import other from "../imagenes/other.png";
+import sports from "../imagenes/deportes.png";
+import foods from "../imagenes/comer.png";
+import sightseeing from "../imagenes/pasear.png";
+import dances from "../imagenes/danza.png";
+import other from "../imagenes/other.png";
 
 import "./CardDetail.css";
 
@@ -17,7 +17,7 @@ export default function CardDetail({
 }) {
   return (
     <div className="actividades">
-      {/* <div className="categoria">
+      <div className="categoria">
         {category === "sports" ? (
           <img src={sports} alt="sports" />
         ) : category === "sightseeing" ? (
@@ -29,7 +29,7 @@ export default function CardDetail({
         ) : category === "other" ? (
           <img src={other} alt="other" />
         ) : null}
-      </div> */}
+      </div>
       <h2>{name}</h2>
       <div className="number">
         <div className="dificultad">
