@@ -84,3 +84,10 @@ export function getDetails(id) {
     }
   };
 }
+
+export function cleanDetail() {
+  return {
+    type: "CLEAR_DETAIL",
+    payload: [],
+  };
+}

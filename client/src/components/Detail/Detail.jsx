@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getActivity, getDetails } from "../../action";
+import { cleanDetail, getActivity, getDetails } from "../../action";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
@@ -30,6 +30,9 @@ export default function Details() {
   useEffect(() => {
     dispatch(getDetails(id));
     dispatch(getActivity());
+    return () => {
+      dispatch(cleanDetail());
+    };
   }, [dispatch, id]);
 
   console.log(detailID);
