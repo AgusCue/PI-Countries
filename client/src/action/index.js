@@ -73,7 +73,7 @@ export function postActivity(payload) {
 export function getDetails(id) {
   return async function (dispatch) {
     try {
-      let json = await axios.get(`/country/${id}`);
+      let json = await axios.get(`/countries/${id}`);
       // console.log(json.data);
       return dispatch({
         type: "GET_DETAILS",
