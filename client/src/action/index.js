@@ -64,6 +64,8 @@ export function filterActivity(payload) {
 }
 
 export function postActivity(payload) {
+  console.log(payload, "payloaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaad");
+
   return async function (dispatch) {
     let json = await axios.post("/activity", payload);
     return json.data;

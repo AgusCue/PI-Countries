@@ -17,8 +17,8 @@ function validate(input) {
     errors.name = "Not accept numbers";
   } else if (!input.duration) {
     errors.duration = "Requires a duration";
-  } else if (!input.difficulties) {
-    errors.difficulties = "Select difficulties";
+  } else if (!input.difficulty) {
+    errors.difficulty = "Select difficulty";
   } else if (!input.category) {
     errors.category = "Select category";
   } else if (!input.season) {
@@ -36,7 +36,7 @@ export default function CreatedActivity() {
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
     name: "",
-    difficulties: "",
+    difficulty: "",
     duration: "",
     category: "",
     season: "",
@@ -52,7 +52,7 @@ export default function CreatedActivity() {
     if (
       errors.name ||
       errors.duration ||
-      errors.difficulties ||
+      errors.difficulty ||
       errors.category ||
       errors.season
     ) {
@@ -61,7 +61,7 @@ export default function CreatedActivity() {
       alert("se creo");
       setInput({
         name: "",
-        difficulties: "",
+        difficulty: "",
         duration: "",
         category: "",
         season: "",
@@ -195,12 +195,12 @@ export default function CreatedActivity() {
 
           <form>
             <div className="difficulties">
-              <p>Difficulties</p>
+              <p>difficulty</p>
               <p className="clasificacion">
                 <input
                   id="radio1"
                   type="radio"
-                  name="difficulties"
+                  name="difficulty"
                   value="5"
                   onChange={handleChange}
                 />
@@ -210,7 +210,7 @@ export default function CreatedActivity() {
                 <input
                   id="radio2"
                   type="radio"
-                  name="difficulties"
+                  name="difficulty"
                   value="4"
                   onChange={handleChange}
                 />
@@ -220,7 +220,7 @@ export default function CreatedActivity() {
                 <input
                   id="radio3"
                   type="radio"
-                  name="difficulties"
+                  name="difficulty"
                   value="3"
                   onChange={handleChange}
                 />
@@ -230,7 +230,7 @@ export default function CreatedActivity() {
                 <input
                   id="radio4"
                   type="radio"
-                  name="difficulties"
+                  name="difficulty"
                   value="2"
                   onChange={handleChange}
                 />
@@ -240,7 +240,7 @@ export default function CreatedActivity() {
                 <input
                   id="radio5"
                   type="radio"
-                  name="difficulties"
+                  name="difficulty"
                   value="1"
                   onChange={handleChange}
                 />
@@ -248,7 +248,7 @@ export default function CreatedActivity() {
                   <strong>X</strong>{" "}
                 </label>
               </p>
-              <p className="errors">{errors.difficulties}</p>
+              <p className="errors">{errors.difficulty}</p>
             </div>
           </form>
           <div className="category">
