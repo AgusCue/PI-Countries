@@ -12,7 +12,7 @@ export function getCountries() {
 
 export function getActivity() {
   return async function (dispatch) {
-    let json = await axios.get("/activities");
+    let json = await axios.get("/activity");
     return dispatch({
       type: "GET_ACTIVITY",
       payload: json.data,
