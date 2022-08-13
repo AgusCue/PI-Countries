@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getActivity, getCountries } from "../../action";
@@ -8,6 +9,8 @@ import Paginado from "../Paginado/Paginado";
 import Filters from "../Filters/Filters";
 import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
+import gitHub from "../iconos/github.png";
+import linkedin from "../iconos/linkedin.png";
 
 import "./Home.css";
 
@@ -45,6 +48,23 @@ export default function Home() {
               <Link to={"/activity"}>
                 <button className="create"> Create activity</button>
               </Link>
+              <div className="redes">
+                <p>
+                  <a href="https://www.linkedin.com/in/agustin-cuello/">
+                    <img
+                      src={linkedin}
+                      alt="gitHub"
+                      width="70px"
+                      height="70px"
+                    />
+                  </a>
+                </p>
+                <p>
+                  <a href="https://github.com/AgusCue">
+                    <img src={gitHub} alt="gitHub" width="70px" height="70px" />
+                  </a>
+                </p>
+              </div>
             </div>
             <Filters setCurrentPage={setCurrentPage} setOrden={setOrden} />
           </div>
