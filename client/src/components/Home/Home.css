@@ -12,9 +12,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  position: absolute;
+  margin-left:180px;
   margin-top: -60px;
-  margin-left: 230px;
+  padding: -50px;
 }
 
 .redes p {
@@ -30,7 +30,8 @@
 
 .create {
   margin-top: 130px;
-  margin-left: 30px;
+  margin-left: -250px;
+  padding: 30px;
   background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 30px;

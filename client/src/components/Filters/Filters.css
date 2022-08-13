@@ -7,9 +7,11 @@
 .continentes{
     display: flex;
     flex-direction: column;
-    margin-left:480px;
+    margin-left:200px;
     margin-top: -10px;
     align-items: center;
+    padding: 20px;
+    
 } 
 
 .world{
@@ -17,8 +19,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer
    
 }
@@ -33,8 +35,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer  
 }
 .africac:focus{
@@ -47,8 +49,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer
 }
 
@@ -62,8 +64,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer;
     margin-top: 10px;
     
@@ -78,8 +80,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer 
 }
 .Asiaa:focus{
@@ -93,8 +95,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer 
 }
 .oceaniaa:focus{
@@ -107,8 +109,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer 
 }
 .sur:focus{
@@ -121,8 +123,8 @@
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     cursor:pointer;
 } 
 .antartida:focus{
